@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to GymTrackr</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    "
+  >
+    <div
+      style="
+        max-width: 600px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      "
+    >
+      <!-- Email content -->
+      <h1 style="color: #333333; font-size: 24px">
+        Welcome to the GymTrackr API, {{.User.Email}}!
+      </h1>
+      <p style="font-size: 16px; color: #555555">
+        Thank you for signing up! We’re thrilled to have you on board. To get
+        started, please verify your email address by clicking the button below:
+      </p>
+
+      <div style="text-align: center; margin: 30px 0">
+        <a
+          href="https://gym-buddy-production-14b1.up.railway.app/v1/account/activate?token={{.Token.Plaintext}}"
+          style="
+            background-color: #dd5612;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: bold;
+          "
+        >
+          Activate Your Account
+        </a>
+      </div>
+
+      <p style="font-size: 14px; color: #888888">
+        If you didn’t sign up for a GymTrackr account, you can safely ignore
+        this email.
+      </p>
+    </div>
+  </body>
+</html>

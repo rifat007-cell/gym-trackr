@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS passkeys (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id BIGINT REFERENCES users(id),
+    keys    TEXT
+
+
+);
