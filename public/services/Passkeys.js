@@ -3,7 +3,7 @@ export const Passkeys = {
     try {
       // Get registration options with the challenge.
       const response = await fetch(
-        "https://gym-buddy-production-14b1.up.railway.app/api/passkey/registration-begin",
+        "https://gym-trackr-production.up.railway.app/api/passkey/registration-begin",
         {
           method: "POST",
           headers: {
@@ -30,7 +30,7 @@ export const Passkeys = {
 
       // Send attestationResponse back to server for verification and storage.
       const verificationResponse = await fetch(
-        "https://gym-buddy-production-14b1.up.railway.app/api/passkey/registration-end",
+        "https://gym-trackr-production.up.railway.app/api/passkey/registration-end",
         {
           method: "POST",
           credentials: "same-origin",
@@ -58,7 +58,7 @@ export const Passkeys = {
     try {
       // Get login options from your server with the challenge
       const response = await fetch(
-        "https://gym-buddy-production-14b1.up.railway.app/api/passkey/authentication-begin",
+        "https://gym-trackr-production.up.railway.app/api/passkey/authentication-begin",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -75,7 +75,7 @@ export const Passkeys = {
 
       // Send assertionResponse back to server for verification.
       const verificationResponse = await fetch(
-        "https://gym-buddy-production-14b1.up.railway.app/api/passkey/authentication-end",
+        "https://gym-trackr-production.up.railway.app/api/passkey/authentication-end",
         {
           method: "POST",
           credentials: "same-origin",

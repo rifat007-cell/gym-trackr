@@ -215,7 +215,7 @@ func (app *application) activateUserHandler(w http.ResponseWriter, r *http.Reque
 
 	user.JWT = token.CreateJWT(*user, app.logger)
 	// Redirect user to frontend with JWT in query string
-redirectURL := fmt.Sprintf("https://gym-buddy-production-14b1.up.railway.app/activated?token=%s", user.JWT)
+redirectURL := fmt.Sprintf("https://gym-trackr-production.up.railway.app/activated?token=%s", user.JWT)
 http.Redirect(w, r, redirectURL, http.StatusSeeOther)
 
 }
