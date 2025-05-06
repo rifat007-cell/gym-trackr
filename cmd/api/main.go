@@ -12,6 +12,7 @@ import (
 	"github.com/go-webauthn/webauthn/webauthn"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
+	"github.com/robfig/cron/v3"
 	"github.com/tanvir-rifat007/gymBuddy/internal/agents"
 	"github.com/tanvir-rifat007/gymBuddy/internal/data"
 )
@@ -95,28 +96,28 @@ if err != nil {
 	}
 
 	// // Setup cron
-	// loc, _ := time.LoadLocation("Asia/Dhaka")
-	// c := cron.New(cron.WithLocation(loc))
+	 loc, _ := time.LoadLocation("Asia/Dhaka")
+	 c := cron.New(cron.WithLocation(loc))
 
 	// // Log current time in Dhaka
-	// logger.Info("Current Asia/Dhaka time", "now", time.Now().In(loc).Format("15:04:05"))
+	 logger.Info("Current Asia/Dhaka time", "now", time.Now().In(loc).Format("15:04:05"))
 
-	// _, err = c.AddFunc("* * * * *", func() {
-	// 	defer func() {
-	// 		if r := recover(); r != nil {
-	// 			logger.Error("Cron panic", "error", r)
-	// 		}
-	// 	}()
-	// 	logger.Info("✅ Every minute cron job running")
-	// 	app.SendWorkoutReminderEmails(app.models.Users)
-	// })
+	 _, err = c.AddFunc("* * * * *", func() {
+		defer func() {
+			if r := recover(); r != nil {
+			logger.Error("Cron panic", "error", r)
+		}
+	 	}()
+		logger.Info("✅ Every minute cron job running")
+	 	app.SendWorkoutReminderEmails(app.models.Users)
+	 })
 
-	// if err != nil {
-	// 	logger.Error("Error scheduling cron job", "error", err)
-	// 	os.Exit(1)
-	// }
-	// c.Start()
-	// logger.Info("Cron job started (every minute)")
+	 if err != nil {
+	 	logger.Error("Error scheduling cron job", "error", err)
+	 	os.Exit(1)
+	 }
+	 c.Start()
+	 logger.Info("Cron job started (every minute)")
 
 
 	// server
