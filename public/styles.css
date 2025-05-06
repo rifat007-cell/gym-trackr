@@ -191,12 +191,12 @@ body > header {
 
   @font-face {
     font-family: "FiraSansRegular";
-    src: url("./assets/fonts/FiraSans-Regular.ttf");
+    src: url("./fonts/FiraSans-Regular.ttf");
   }
 
   @font-face {
     font-family: "OutfitRegular";
-    src: url("./assets/fonts/Outfit-Regular.ttf");
+    src: url("./fonts/Outfit-Regular.ttf");
   }
 
   body {

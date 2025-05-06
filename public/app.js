@@ -332,3 +332,8 @@ document.getElementById("downloadButton").addEventListener("click", (e) => {
     });
   }
 });
+
+export function setTitle(title) {
+  console.log("Setting title to", title);
+  document.title = `${title} | GymTrackr`;
+}

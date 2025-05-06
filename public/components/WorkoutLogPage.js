@@ -1,9 +1,12 @@
+import { setTitle } from "../app.js";
+
 export class WorkoutLogPage extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
+    setTitle("Workout Log");
     this.render();
   }
 

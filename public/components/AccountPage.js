@@ -1,5 +1,8 @@
+import { setTitle } from "../app.js";
+
 export default class AccountPage extends HTMLElement {
   connectedCallback() {
+    setTitle("Account");
     const template = document.getElementById("account-page-template");
     const content = template.content.cloneNode(true);
     this.appendChild(content);

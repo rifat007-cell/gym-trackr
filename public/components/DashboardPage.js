@@ -6,6 +6,8 @@ export class DashboardPage extends HTMLElement {
   }
 
   connectedCallback() {
+    setTitle("Dashboard");
+
     this.render();
   }
 

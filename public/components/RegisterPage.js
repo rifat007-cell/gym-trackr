@@ -1,9 +1,13 @@
+import { setTitle } from "../app.js";
+
 export class RegisterPage extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
+    setTitle("Register");
+
     this.render();
   }
 

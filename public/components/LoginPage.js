@@ -1,9 +1,13 @@
+import { setTitle } from "../app.js";
+
 export class LoginPage extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
+    setTitle("Login");
+
     this.render();
   }
 

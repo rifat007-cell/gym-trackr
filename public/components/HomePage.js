@@ -1,9 +1,13 @@
+import { setTitle } from "../app.js";
+
 export class HomePage extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
+    setTitle("Home");
+
     this.render();
   }
 

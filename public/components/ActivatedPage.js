@@ -1,9 +1,12 @@
+import { setTitle } from "../app.js";
+
 export class ActivatedPage extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
+    setTitle("Activated");
     this.render();
   }
 
