@@ -5,7 +5,7 @@
   "name": "GymTrackr",
   "short_name": "GymTrackr",
   "display": "standalone",
-  "theme_color": "#722803",
+  "theme_color": "hsl(143, 38%, 37%)",
   "icons": [
     {
       "src": "./icon1.png",
@@ -24,13 +24,13 @@
   "description": "GymTrackr is a web application designed to help users track their workouts, manage their fitness goals, and monitor their progress over time. With a user-friendly interface and powerful features, GymTrackr makes it easy to stay motivated and achieve your fitness objectives.",
   "screenshots": [
     {
-      "src": "screenshot1.png",
+      "src": "screenshot3.png",
       "sizes": "1024x562",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "screenshot2.png",
+      "src": "screenshot4.png",
       "sizes": "1024x562",
       "type": "image/png",
       "form_factor": "narrow"
