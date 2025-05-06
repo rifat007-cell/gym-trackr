@@ -1,3 +1,4 @@
+import { setTitle } from "../app.js";
 import { API } from "../services/API.js";
 
 export class DashboardPage extends HTMLElement {
