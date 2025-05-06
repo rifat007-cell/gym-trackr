@@ -6,131 +6,131 @@ export class ChatWidget extends HTMLElement {
     const shadow = this.attachShadow({ mode: "open" });
 
     shadow.innerHTML = `
-      <style>
-        :host { all: initial; }
+<style>
+  :host { all: initial; }
 
-        #chat-toggle-btn {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background: var(--clr-primary-500);
-          color: var(--clr-white);
-          border: none;
-          border-radius: 50%;
-          width: 56px;
-          height: 56px;
-          font-size: 1.5rem;
-          cursor: pointer;
-          z-index: 10000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-          transition: background 0.2s ease;
-        }
+  #chat-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--clr-green-500);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease;
+  }
 
-        #chat-toggle-btn:hover {
-          background: var(--clr-primary-600);
-        }
+  #chat-toggle-btn:hover {
+    background: var(--clr-green-600);
+  }
 
-        #chat-widget {
-          position: fixed;
-          bottom: 90px;
-          right: 20px;
-          width: 320px;
-          max-height: 500px;
-          background: var(--clr-white);
-          border-radius: 1rem;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          font-family: var(--ff-body);
-          z-index: 9999;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+  #chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 500px;
+    background: var(--clr-brown-700);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ff-body);
+    z-index: 9999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 
-        #chat-widget.hidden {
-          transform: translateY(20px);
-          opacity: 0;
-          pointer-events: none;
-        }
+  #chat-widget.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+  }
 
-        #chat-header {
-          background: var(--clr-primary-500);
-          color: var(--clr-white);
-          padding: 0.75rem 1rem;
-          font-weight: bold;
-          font-size: var(--fs-500);
-          text-align: center;
-          font-family: var(--ff-heading);
-        }
+  #chat-header {
+    background: var(--clr-green-500);
+    color: var(--clr-white);
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    font-size: var(--fs-500);
+    text-align: center;
+    font-family: var(--ff-heading);
+  }
 
-        #chat-body {
-          flex: 1;
-          padding: 0.625rem;
-          overflow-y: auto;
-          background: var(--clr-bg-light);
-          font-size: var(--fs-400);
-          display: flex;
-          flex-direction: column;
-        }
+  #chat-body {
+    flex: 1;
+    padding: 0.625rem;
+    overflow-y: auto;
+    background: var(--clr-brown-600);
+    font-size: var(--fs-400);
+    display: flex;
+    flex-direction: column;
+  }
 
-        .message {
-          margin: 0.5rem 0;
-          padding: 0.625rem 0.875rem;
-          border-radius: 0.75rem;
-          line-height: 1.4;
-          max-width: 80%;
-          font-size: var(--fs-400);
-        }
+  .message {
+    margin: 0.5rem 0;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.75rem;
+    line-height: 1.4;
+    max-width: 80%;
+    font-size: var(--fs-400);
+  }
 
-        .message.bot {
-          background: var(--clr-gray-100);
-          color: var(--clr-black);
-          align-self: flex-start;
-        }
+  .message.bot {
+    background: var(--clr-gray-100);
+    color: var(--clr-brown-900);
+    align-self: flex-start;
+  }
 
-        .message.user {
-          background: var(--clr-success-400);
-          color: var(--clr-white);
-          align-self: flex-end;
-        }
+  .message.user {
+    background: var(--clr-green-400);
+    color: var(--clr-white);
+    align-self: flex-end;
+  }
 
-        #chat-form {
-          display: flex;
-          border-top: 1px solid var(--clr-gray-100);
-          background: var(--clr-bg-main);
-        }
+  #chat-form {
+    display: flex;
+    border-top: 1px solid var(--clr-gray-100);
+    background: var(--clr-brown-700);
+  }
 
-        #chat-input {
-          flex: 1;
-          border: none;
-          padding: 0.75rem;
-          outline: none;
-          font-size: var(--fs-400);
-          font-family: var(--ff-body);
-          color: var(--clr-white);
-          background: var(--clr-bg-main);
-          border-radius: 0 0 0 1rem;
-        }
+  #chat-input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem;
+    outline: none;
+    font-size: var(--fs-400);
+    font-family: var(--ff-body);
+    color: var(--clr-white);
+    background: var(--clr-brown-800);
+    border-radius: 0 0 0 1rem;
+  }
 
-        #chat-form button {
-          background: var(--clr-primary-500);
-          color: var(--clr-white);
-          border: none;
-          padding: 0 1rem;
-          cursor: pointer;
-          font-size: var(--fs-500);
-          font-family: var(--ff-body);
-          border-radius: 0 0 1rem 0;
-          transition: background 0.2s ease-in-out;
-        }
+  #chat-form button {
+    background: var(--clr-green-500);
+    color: var(--clr-white);
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-size: var(--fs-500);
+    font-family: var(--ff-body);
+    border-radius: 0 0 1rem 0;
+    transition: background 0.2s ease-in-out;
+  }
 
-        #chat-form button:hover {
-          background: var(--clr-primary-600);
-        }
-      </style>
+  #chat-form button:hover {
+    background: var(--clr-green-600);
+  }
+</style>
 
       <button id="chat-toggle-btn" title="Toggle Chat">💬</button>
 
