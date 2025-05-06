@@ -74,9 +74,9 @@ if port == "" {
 
 
 	wconfig := &webauthn.Config{
-	RPDisplayName: "GymBuddy",
+	RPDisplayName: "GymTrackr",
 	RPID:          "gym-trackr-production.up.railway.app",
-	RPOrigins:     []string{"https://gym-trackr-production.up.railway.app/"},
+	RPOrigins:     []string{"https://gym-trackr-production.up.railway.app"},
 }
 
 webAuthn, err := webauthn.New(wconfig)
