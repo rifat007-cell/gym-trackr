@@ -101,7 +101,6 @@ func (app *application) getExercisesByWorkoutHandler(w http.ResponseWriter, r *h
 		return
 	}
 
-// make a map of workouts
 	data:= envelope{
 		"workouts": workouts,
 	}
