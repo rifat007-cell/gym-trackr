@@ -23,12 +23,13 @@ export class DashboardPage extends HTMLElement {
 
     const ctx = this.querySelector("#dashboard").getContext("2d");
 
-    // Get CSS variables from the page so i use the root variables
     const styles = getComputedStyle(document.documentElement);
-    const primaryColor = styles.getPropertyValue("--clr-primary-400").trim();
-    const bgColor = styles.getPropertyValue("--clr-bg-main").trim();
-    const gridColor = styles.getPropertyValue("--clr-gray-800").trim();
+    const primaryColor = styles.getPropertyValue("--clr-green-400").trim();
+    const bgColor = styles.getPropertyValue("--clr-brown-700").trim();
+    const gridColor = styles.getPropertyValue("--clr-gray-100").trim(); // you can add a darker gray if needed
     const fontColor = styles.getPropertyValue("--clr-white").trim();
+    const bodyFont = styles.getPropertyValue("--ff-body").trim();
+    const headingFont = styles.getPropertyValue("--ff-heading").trim();
 
     new Chart(ctx, {
       type: "line",
@@ -53,7 +54,7 @@ export class DashboardPage extends HTMLElement {
             labels: {
               color: fontColor,
               font: {
-                family: styles.getPropertyValue("--ff-body").trim(),
+                family: bodyFont,
               },
             },
           },
@@ -63,7 +64,7 @@ export class DashboardPage extends HTMLElement {
             ticks: {
               color: fontColor,
               font: {
-                family: styles.getPropertyValue("--ff-body").trim(),
+                family: bodyFont,
               },
             },
             grid: {
@@ -74,7 +75,7 @@ export class DashboardPage extends HTMLElement {
               text: "Date",
               color: fontColor,
               font: {
-                family: styles.getPropertyValue("--ff-heading").trim(),
+                family: headingFont,
                 size: 14,
               },
             },
@@ -83,7 +84,7 @@ export class DashboardPage extends HTMLElement {
             ticks: {
               color: fontColor,
               font: {
-                family: styles.getPropertyValue("--ff-body").trim(),
+                family: bodyFont,
               },
             },
             grid: {
@@ -94,7 +95,7 @@ export class DashboardPage extends HTMLElement {
               text: "Volume (sets × reps × weight)",
               color: fontColor,
               font: {
-                family: styles.getPropertyValue("--ff-heading").trim(),
+                family: headingFont,
                 size: 14,
               },
             },
