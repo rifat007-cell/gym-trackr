@@ -1,5 +1,5 @@
 export const API = {
-    baseURL: "https://gym-trackr-production.up.railway.app",
+    baseURL: "https://gym-trackr-production.up.railway.app/v1",
 
     getWorkouts: (data) => {
         if (app.store.activated) {
